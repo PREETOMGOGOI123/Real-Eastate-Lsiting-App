@@ -4,7 +4,7 @@ This is a Real Estate web application built using Node.js, Express, and EJS. The
 
 ## Project Structure
 
-``
+```
 real-estate-listings-app/
 ├── 
 
@@ -36,7 +36,7 @@ server.js
 │   ├── homepage.ejs
 │   ├── sellerPortal.ejs
 
-``
+```
 
 ## Technologies Used
 
