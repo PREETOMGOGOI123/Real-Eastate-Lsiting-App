@@ -1,0 +1,33 @@
+<% const featuredProperties=[ { title: 'Premium Land in XYZ country' , size: '14400 sqft' ,
+	image: 'https://images.unsplash.com/photo-1629460455571-c943339c4f23?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+	, price: '80 Lakhs' }, { title: 'Commercial Plot in Xyz2' , size: '40000 sqft' ,
+	image: 'https://images.unsplash.com/photo-1589786161184-6d43d20526e2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+	, price: '1.5 Crore' }, { title: 'Residential Land in Xyz3' , size: '26000 Aana' ,
+	image: 'https://images.unsplash.com/photo-1638332931076-02612bcadf3a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+	, price: '60 Lakhs' } ] %>
+
+
+	<div class="container mx-auto px-4 py-16">
+		<h2 class="mb-12 text-center text-4xl font-bold">Featured Properties</h2>
+		<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+				<% featuredProperties.map((item)=> { %>
+					<div class="card bg-base-100 shadow-xl">
+						<figure>
+							<img src="<%= item.image %>" alt="Property" class="w-full h-full object-cover" />
+						</figure>
+						<div class="card-body">
+							<h3 class="card-title">
+								<%= item.title %>
+							</h3>
+							<p>
+								<%= item.size %>, Residential Plot
+							</p>
+							<div class="mt-4 flex items-center justify-between">
+								<span class="font-bold text-primary">Rs. <%= item.price %></span>
+								<button class="btn btn-primary btn-sm">View Details</button>
+							</div>
+						</div>
+					</div>
+					<% }); %>
+			</div>
+	</div>

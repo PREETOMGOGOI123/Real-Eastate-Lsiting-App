@@ -1,0 +1,67 @@
+<section class="container my-10 border-base-200 border-2 mx-auto rounded-md">
+    <div class="alert shadow-lg bg-primary text-primary-content">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-current shrink-0 w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        <div>
+            <h3 class="font-bold">List Your Property with Ease!</h3>
+            <div class="text-xs">Fill out the details below and reach potential buyers or renters quickly. Our platform
+                makes property listing simple and effective.</div>
+        </div>
+    </div>
+    <form method="POST" action="/seller" class="form mb-20 flex flex-col gap-10 items-center p-10 bg-neutral shadow-xl">
+
+        <fieldset class="w-full flex items-center justify-center gap-6 flex-wrap">
+            <legend class="label text-center my-5">Seller Info</legend>
+            <div class="w-full max-w-xs">
+                <input type="text" name="name" placeholder="Name" class="input input-bordered w-full"
+                    value="<%= locals.formData && formData.name ? formData.name : '' %>" />
+            </div>
+
+            <div class="w-full max-w-xs">
+                <input type="email" name="email" placeholder="Email" class="input input-bordered w-full"
+                    value="<%= locals.formData ? formData.email : '' %>" />
+            </div>
+
+            <div class="w-full max-w-xs">
+                <input type="tel" name="contact" placeholder="Contact" class="input input-bordered w-full"
+                    value="<%= locals.formData ? formData.contact : '' %>" />
+            </div>
+        </fieldset>
+
+        <fieldset class="flex items-center justify-center gap-6 flex-wrap mx-auto">
+            <legend class="label text-center my-5">Property Details</legend>
+            <div class="w-full max-w-xs">
+                <input type="text" name="property_listing_title" placeholder="Property Title"
+                    class="input input-bordered w-full"
+                    value="<%= locals.formData ? formData.property_listing_title : '' %>" />
+            </div>
+
+            <div class="w-full max-w-xs">
+                <textarea name="property_listing_description" placeholder="Property Description"
+                    class="textarea textarea-bordered w-full"><%= locals.formData ? formData.property_listing_description : '' %></textarea>
+            </div>
+
+            <div class="w-full max-w-xs">
+                <input type="text" name="property_listing_size" placeholder="Property Size"
+                    class="input input-bordered w-full"
+                    value="<%= locals.formData ? formData.property_listing_size : '' %>" />
+            </div>
+
+            <div class="w-full max-w-xs">
+                <input type="text" name="property_listing_price" placeholder="Property Price"
+                    class="input input-bordered w-full"
+                    value="<%= locals.formData ? formData.property_listing_price : '' %>" />
+            </div>
+
+            <div class="w-full max-w-xs">
+                <input type="text" name="property_listing_location" placeholder="Property Location"
+                    class="input input-bordered w-full"
+                    value="<%= locals.formData ? formData.property_listing_location : '' %>" />
+            </div>
+        </fieldset>
+
+        <button type="submit" class="btn btn-primary">Submit Listing</button>
+    </form>
+</section>
